@@ -105,7 +105,7 @@ Exemplo do JSON gerado para um cliente cadastrado:
 ```
 
 ## Cálculo da Idade 
-Ele pega o ano atual e subtrai o ano de nascimento para obter a idade bruta. Depois verifica se o aniversário da pessoa ainda não aconteceu neste ano comparando o “dia do ano” da data de nascimento com o “dia do ano” de hoje.
+Pega o ano atual e subtrai o ano de nascimento para obter a idade bruta. Depois verifica se o aniversário da pessoa ainda não aconteceu neste ano comparando o “dia do ano” da data de nascimento com o “dia do ano” de hoje.
 Se o aniversário ainda não chegou, ele subtrai 1. Se já passou, mantém a idade.
 ```
   public int Idade =>
