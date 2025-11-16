@@ -61,7 +61,7 @@ Front-End
 │
 └── BWS.FrontEnd                     # Aplicação MVC consumindo a API
     ├── Controllers                  # Lógica das views
-    ├── Converters                   # Conversão DTO ↔ ViewModel
+    ├── Converters                   # Provisório devigo a bug
     ├── Models                       # ViewModels usados na interface
     ├── Services                     # Cliente HTTP que chama a API
     ├── Views                        # Telas Razor
@@ -81,11 +81,55 @@ Front-End
 
 ## EndPoints
 
-- GET /Clientes 
+- GET /Clientes
+  🔹- Retorna todos os clientes 
 - GET /Clientes/{id}
+  🔹 - Retorna somente um cliente especifico
 - POST /Clientes/Cadastrar
+  🔹 - Cria um cliente
 - PUT /Clientes/{id}
+  🔹 - Atualiza um cliente especifico
 - DELETE /clientes/{id}
+  🔹 - Deleta um cliente especifico
+
+Exemplo do JSON gerado para um cliente cadastrado:
+```
+  {
+  "nome": "Lucas",
+  "cpf" : "xxxxxxxxxxxxx",
+  "dataNascimento": "2025-11-16",
+  "dataCadastro": "2025-01-01T00:00:00",
+  "rendaFamilia": 2500,
+  "classe": "A" 
+}
+```
+
+## Cálculo da Idade 
+Ele pega o ano atual e subtrai o ano de nascimento para obter a idade bruta. Depois verifica se o aniversário da pessoa ainda não aconteceu neste ano comparando o “dia do ano” da data de nascimento com o “dia do ano” de hoje.
+Se o aniversário ainda não chegou, ele subtrai 1. Se já passou, mantém a idade.
+```
+  public int Idade =>
+    DateOnly.FromDateTime(DateTime.Today).Year - DataNascimento.Year -
+    (DataNascimento.DayOfYear > DateOnly.FromDateTime(DateTime.Today).DayOfYear ? 1 : 0);
+```
+
+## 🐱‍🏍 Como Rodar o Projeto
+1️⃣ Rodar a API
+```
+cd BWS.API
+dotnet ef database update
+dotnet run
+```
+```
+2️⃣ Rodar o Front-End
+cd BWS.FrontEnd
+dotnet run
+```
+```
+Acesse:
+https://localhost:{porta}/Clientes
+```
+⚠️ Observação: É necessário sincronizar as portas de acesso nas Program.cs da API e do FrontEnd para funcionarem corretamente ⚠️
 
 ## 👨‍💻 Autor
 **Lucas Simões**  
