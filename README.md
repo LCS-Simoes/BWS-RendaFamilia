@@ -18,7 +18,7 @@ O objetivo é fornecer uma solução prática e didática para estudos de ASP.NE
 - Filtro de período: Hoje, Esta Semana, Este Mês
 
 🔌 Consumo da API via HttpClient no Front-End
-🎨 Design usando Bootstrap + CSS customizado para cards
+🎨 Design usando Bootstrap 
 
 ## ⚙️ Dependências Utilizadas
 - API (.NET 8)
