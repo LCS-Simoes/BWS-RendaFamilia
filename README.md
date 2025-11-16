@@ -1,6 +1,6 @@
-# BWS – Sistema de Cadastro e Relatórios de Clientes
+# BWS (Teste de vaga) – Sistema de Cadastro e Relatórios de Clientes
 
-O BWS é um sistema desenvolvido em ASP.NET Core MVC com uma API REST em .NET 8 para gerenciamento completo de clientes.
+É um sistema desenvolvido em ASP.NET Core MVC com uma API REST em .NET 8 para gerenciamento completo de clientes.
 A aplicação permite realizar cadastro, edição, exclusão, listagem e geração de relatórios dinâmicos com filtros por data (Hoje, Semana e Mês).
 
 O objetivo é fornecer uma solução prática e didática para estudos de ASP.NET, MVC, consumo de API e Entity Framework.
