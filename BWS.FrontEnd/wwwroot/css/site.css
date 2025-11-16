@@ -1,0 +1,169 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* ====== FORMULÁRIO ====== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+    button:hover {
+        background: #0056b3;
+    }
+
+
+.table-container {
+    margin-top: 35px;
+    overflow-x: auto;
+}
+
+table { 
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    table th {
+        background: #007bff;
+        color: black;
+        padding: 12px;
+    }
+
+    table td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table tr:hover {
+        background: #f0f8ff;
+    }
+
+.sem-renda {
+    color: black;
+    font-style: italic;
+}
+
+
+.action-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff !important;
+    transition: all .25s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    margin-right: 6px;
+}
+
+    .action-btn.edit {
+        background: #28a745;
+    }
+
+        .action-btn.edit:hover {
+            background: #1e7e34;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.20);
+        }
+
+    .action-btn.delete {
+        background: #dc3545;
+    }
+
+        .action-btn.delete:hover {
+            background: #b02a37;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.20);
+        }
+
+/* ==== BADGES ======*/
+.renda-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 90px;
+    text-align: center;
+    color: #fff;
+}
+
+/* ========= vermelho ======= */
+.renda-a {
+    background: #e63946;
+}
+
+/* ======= amarelo ==========*/
+.renda-b {
+    background: #f1c40f;
+    color: #000;
+}
+
+/* ======== verde ======= */
+.renda-c {
+    background: #2ecc71;
+}
+
+/* ========= AREA DOS RELATORIOS =========*/
+
+

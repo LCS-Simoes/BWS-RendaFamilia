@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Listagem Clientes";
+}
+
+@model List<ClienteViewModel>
+
+<div class="container mt-4">
+
+    <h2 class="titulo">Clientes</h2>
+
+    <!-- Mensagem de sucesso -->
+    @if (ViewBag.Sucesso != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.Sucesso
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Mensagem de erro -->
+    @if (ViewBag.Erro != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @ViewBag.Erro
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <form method="get" class="mb-3">
+        <input type="text" name="nome" placeholder="Pesquisar por nome…" class="form-control" />
+    </form>
+
+    <table class="table tabela-clientes">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Renda</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td class="texto-preto">@c.Nome</td>
+                    <td data-renda="@c.RendaFamilia" class="col-renda"></td>
+                    <td>
+                        <a href="/Clientes/EditarCliente/@c.Id" class="action-btn edit">Editar </a>
+                        <a href="/Clientes/ExcluirCliente/@c.Id" class="action-btn delete">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".col-renda").forEach(td => {
+                const renda = td.getAttribute("data-renda");
+                td.innerHTML = gerarBadge(renda);
+            });
+        });
+    </script>
+</div>

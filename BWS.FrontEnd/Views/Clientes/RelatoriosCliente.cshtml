@@ -1,0 +1,58 @@
+﻿@model RelatorioViewModel
+
+@{
+    ViewData["Title"] = "Relatórios Clientes";
+}
+
+<div class="container mt-4">
+    <h2>Relatorios de Clientes</h2>
+
+    <div class="mb-3">
+        <form method="get" class="d-flex gap-2">
+            <select name="periodo" class="form-select w-auto">
+                <option value="Hoje" selected="@Model.FiltroPeriodo == " Hoje"">Hoje</option>
+                <option value="Semana" selected="@Model.FiltroPeriodo == " Semana"">Esta Semana</option>
+                <option value="Mes" selected="@Model.FiltroPeriodo == " Mes"">Este Mês</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Filtrar</button>  
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Clientes >18 anos e renda acima da média</h5>
+                    <p class="card-text display-4">@Model.ClientesAcimaMedia</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Clientes Classe A</h5>
+                    <p class="card-text display-4">@Model.ClientesA</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Clientes Classe B</h5>
+                    <p class="card-text display-4">@Model.ClientesB</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Clientes Classe C</h5>
+                    <p class="card-text display-4">@Model.ClientesC</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

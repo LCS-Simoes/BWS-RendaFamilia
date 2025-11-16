@@ -1,0 +1,14 @@
+﻿@model ClienteViewModel
+
+@{
+    ViewData["Title"] = "Listagem Clientes";
+}
+<div class="text-center">
+    <h3>Deseja realmente excluir o usuário "@Model.Nome"?</h3>
+    <p>Essa ação não poderá ser revertida</p>
+    <br />
+    <form asp-action="ConfirmarExcluir" asp-route-id="@Model.Id" method="post">
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a asp-action="Index" class="btn btn-primary">Cancelar</a>
+    </form>
+</div>

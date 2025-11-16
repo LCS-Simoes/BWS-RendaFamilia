@@ -1,0 +1,30 @@
+﻿@model CadastroViewModel
+@{
+    ViewData["Title"] = "Cadastro de Clientes";
+}
+
+<div class="container mt-4">
+    <form asp-controller="Clientes" asp-action="FormCadastro" method="post">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" asp-for="Nome" class="form-control" placeholder="Digite um Nome" maxlength="150" required>
+            @Html.ValidationMessageFor(x => x.Nome)
+            
+            <br />
+            <label for="cpf" class="form-label">CPF - Somente números</label>
+            <input type="text" asp-for="Cpf" class="form-control" placeholder="Digite um CPF Válido" maxlength="11" pattern="\d{11}" required>
+            <small class="form-text text-muted">Apenas números, 11 dígitos.</small>
+
+            <br />
+            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+            <input type="date" asp-for="DataNascimento" class="form-control" max="@DateTime.Today.ToString("yyyy-MM-dd")" required/>
+
+            <br />
+            <label for="rendaFamiliar" class="form-label">Renda Familiar</label>
+            <input type="number" asp-for="RendaFamilia" class="form-control" placeholder="Opcional" min="0"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
+        <a class="btn btn-secondary" asp-controller="Clientes" asp-action="Index" role="button">Voltar</a>
+    </form>
+</div>
