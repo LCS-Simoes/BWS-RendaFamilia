@@ -67,7 +67,7 @@ Front-End
     ├── Views                        # Telas Razor
     └── wwwroot
         ├── css                      # CSS customizado
-        ├── js                       # Scripts
+        ├── js                       # Scripts - Calculo de Renda
         └── lib                      # Bootstrap e libs externas
 ```
 
