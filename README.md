@@ -50,8 +50,8 @@ Front-End
 │   └── UseCases                     # Casos de uso específicos
 │
 ├── BWS.Domain                        # Domínio (entidades e regras centrais / Interfaces)
-│   └── *Entidades / Objetos de domínio*  
-│
+│   └── Entidades / Objetos de domínio 
+│   └── Interfaces
 ├── BWS.Infrastructure               # Infraestrutura (SQLite, EF etc)
 │   ├── Dependências                 # Configuração e DI da camada
 │   ├── Data                         # DbContext, repositórios e arquivos .db
